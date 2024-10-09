@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LembreteEntrada from "./LembreteEntrada";
+import LembreteLista from "./LembreteLista";
 
 function App() {
   const [lembretes, setLembretes] = useState([]);
@@ -15,6 +16,7 @@ function App() {
         <div className="col-md-6 text-center">
           <h1>Lembretes</h1>
           <LembreteEntrada adicionarLembrete={adicionarLembrete} />
+          <LembreteLista lembretes={lembretes} />
           <ul className="list-group mt-3">
             {lembretes.map((lembrete, index) => (
               <li key={index} className="list-group-item">
@@ -29,4 +31,3 @@ function App() {
 }
 
 export default App;
-
